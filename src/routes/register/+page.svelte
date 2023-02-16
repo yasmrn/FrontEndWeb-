@@ -1,0 +1,58 @@
+<script>
+	import { enhance } from '$app/forms';
+	import ListErrors from '$lib/ListErrors.svelte';
+
+	/** @type {import('./$types').ActionData} */
+	export let form;
+</script>
+
+<svelte:head>
+	<title>Sign up • Conduit</title>
+</svelte:head>
+
+<body>
+<div class="auth-page">
+	<div class="container page">
+		<div class="row">
+			<div class="col-md-6 offset-md-3 col-xs-12">
+				<h1 class="text-xs-center">Sign up</h1>
+				<p class="text-xs-center">
+					<a href="/login">Have an account?</a>
+				</p>
+
+				<ListErrors errors={form?.errors} />
+
+				<form use:enhance method="POST">
+					<fieldset class="form-group">
+						<input
+							class="form-control form-control-lg"
+							name="username"
+							type="text"
+							required
+							placeholder="Your Name"
+						/>
+					</fieldset>
+
+					<fieldset class="form-group">
+						<input
+							class="form-control form-control-lg"
+							name="password"
+							type="password"
+							required
+							placeholder="Password"
+						/>
+					</fieldset>
+					<button class="btn btn-lg btn-primary pull-xs-right">Sign up</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+<style>
+	body{
+		background-color: #f2d689;
+		z-index: 1;
+	}
+</style>

@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+.sapper
+yarn.lock
+cypress/screenshots
+templates/.*
+.sessions
+export
+build
+app/manifest
+/functions
+/.svelte-kit
+.vercel
